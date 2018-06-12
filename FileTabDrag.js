@@ -13,6 +13,20 @@
 (function($) {
 
     /**
+     * __contains
+     * 
+     * @access  public
+     * @param   mixed value
+     * @param   Array arr
+     * @return  Boolean
+     */
+    var __contains = function(value, arr) {
+console.log('check');
+        var index = $.inArray(value, arr);
+        return index !== -1;
+    };
+
+    /**
      * __getTabTransferImageUri
      * 
      * @note    Screenshot linked to below is reference to issues with page
@@ -117,20 +131,20 @@
         for (index in dataTransfer.types) {
             types.push(dataTransfer.types[index]);
         }
-        if (ArrayUtils.contains('application/x-moz-nativeimage', types) === true) {
+        if (__contains('application/x-moz-nativeimage', types) === true) {
             return true;
         }
-        if (ArrayUtils.contains('image/tiff', types) === true) {
+        if (__contains('image/tiff', types) === true) {
             return false;
             return true;
         }
         if (types.length !== 2) {
             return false;
         }
-        if (ArrayUtils.contains('text/html', types) === false) {
+        if (__contains('text/html', types) === false) {
             return false;
         }
-        if (ArrayUtils.contains('text/uri-list', types) === false) {
+        if (__contains('text/uri-list', types) === false) {
             return false;
         }
         return true;
