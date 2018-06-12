@@ -121,7 +121,7 @@
             return true;
         }
         if (ArrayUtils.contains('image/tiff', types) === true) {
-            // return false;
+            return false;
             return true;
         }
         if (types.length !== 2) {
