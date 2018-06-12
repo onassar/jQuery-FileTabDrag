@@ -15,13 +15,12 @@
     /**
      * __contains
      * 
-     * @access  public
+     * @access  private
      * @param   mixed value
      * @param   Array arr
      * @return  Boolean
      */
     var __contains = function(value, arr) {
-console.log('check');
         var index = $.inArray(value, arr);
         return index !== -1;
     };
