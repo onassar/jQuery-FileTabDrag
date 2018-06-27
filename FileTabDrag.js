@@ -77,11 +77,6 @@
     /**
      * __isFileDrag
      * 
-     * This method is used to prevent the app-wide dropzone-modal from fading in
-     * when anything within the app is dragged around (most importantly, the
-     * joystick). It's also used to prevent images from other tabs/windows from
-     * causing any issues.
-     * 
      * @see     https://sentry.io/stencil/javascript/issues/573179290/?environment=prod
      *          https://i.imgur.com/JnYywfe.png
      * @access  protected
@@ -89,7 +84,14 @@
      * @return  Boolean
      */
     var __isFileDrag = function(event) {
-        var dataTransfer = event.originalEvent.dataTransfer;
+        if (event === undefined || event === null) {
+            return false;
+        }
+        var originalEvent = event.originalEvent;
+        if (originalEvent === undefined || originalEvent === null) {
+            return false;
+        }
+        var dataTransfer = originalEvent.dataTransfer;
         if (dataTransfer === undefined || dataTransfer === null) {
             return false;
         }
