@@ -284,8 +284,10 @@
     };
 
     /**
+     * __construct
      * 
-     * 
+     * Operates as the constructor by calling the private __setupListeners
+     * function, and returning itself to allow for chaining.
      */
     $.fn.listenForFileAndTabDrag = function() {
         __setupListeners(this);
