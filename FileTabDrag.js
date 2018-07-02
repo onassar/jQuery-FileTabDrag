@@ -102,6 +102,9 @@
         var index, type;
         for (index in types) {
             type = types[index];
+            if (type.toLowerCase === undefined || type.toLowerCase === null) {
+                continue;
+            }
             if (type.toLowerCase() === 'files') {
                 return true;
             }
