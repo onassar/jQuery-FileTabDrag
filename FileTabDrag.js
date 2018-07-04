@@ -125,8 +125,18 @@
      * @return  Boolean
      */
     var __isTabDrag = function(event) {
-        var dataTransfer = event.originalEvent.dataTransfer,
-            files = dataTransfer.files;
+        var originalEvent = event.originalEvent;
+        if (originalEvent === undefined || originalEvent === null) {
+            return false;
+        }
+        var dataTransfer = originalEvent.dataTransfer;
+        if (dataTransfer === undefined || dataTransfer === null) {
+            return false;
+        }
+        var files = dataTransfer.files;
+        if (files === undefined || files === null) {
+            return false;
+        }
         if (files.length > 0) {
             return false;
         }
