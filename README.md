@@ -3,6 +3,7 @@ jQuery plugin which exposes custom events which you can listen to to detect file
 
 ### Example
 ``` javascript
+$('body').listenForFileAndTabDrag();
 $('body').on({,
     'custom/drag/drop/files': function(event, files) {
         console.log(files);
