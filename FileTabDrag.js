@@ -34,6 +34,16 @@
      * @see     https://i.imgur.com/NNw9JRf.png
      * @see     https://i.imgur.com/pJWQmHk.png
      * @see     https://i.imgur.com/iSAcaZZ.png
+     * @note    The $(data) code below can have some unexpected behaviour. For
+     *          example: in cases where the image tag might have an src or
+     *          set value that is relative
+     *          (eg. here: https://i.imgur.com/2ejEl1u.png) a request may be
+     *          made to yourdomain.com/$srcset-path because your browser (more
+     *          specifically, jQuery and the DOM) is trying to load the img
+     *          element and all it's related attribute values. So this means
+     *          your server log may contain arbitrary requests unrelated to your
+     *          app, which may just be attribute values of images (from other
+     *          tabs or windows) that are being dragged in.
      * @access  public
      * @param   Object event
      * @return  false|String
