@@ -423,10 +423,10 @@
      * @return  void
      */
     var __processTabDrop = function(event, $element) {
-        var imageURL = __getTabTransferImageURI(event);
-        if (imageURL !== false) {
+        var imageURI = __getTabTransferImageURI(event);
+        if (imageURI !== false) {
             var eventType = 'custom/drag/drop/tab';
-            $element.triggerHandler(eventType, [imageURL]);
+            $element.triggerHandler(eventType, [imageURI]);
         }
     };
 
