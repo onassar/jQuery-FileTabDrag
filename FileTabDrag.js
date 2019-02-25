@@ -182,7 +182,7 @@
     };
 
     /**
-     * __getTabTransferImageUri
+     * __getTabTransferImageURI
      * 
      * @note    Screenshot linked to below is reference to issues with page
      *          trying to automatically load local file.
@@ -204,7 +204,7 @@
      * @param   Object event
      * @return  false|String
      */
-    var __getTabTransferImageUri = function(event) {
+    var __getTabTransferImageURI = function(event) {
         var dataTransfer = event.originalEvent.dataTransfer,
             files = dataTransfer.files;
         if (files.length > 0) {
@@ -423,10 +423,10 @@
      * @return  void
      */
     var __processTabDrop = function(event, $element) {
-        var imageUrl = __getTabTransferImageUri(event);
-        if (imageUrl !== false) {
+        var imageURL = __getTabTransferImageURI(event);
+        if (imageURL !== false) {
             var eventType = 'custom/drag/drop/tab';
-            $element.triggerHandler(eventType, [imageUrl]);
+            $element.triggerHandler(eventType, [imageURL]);
         }
     };
 

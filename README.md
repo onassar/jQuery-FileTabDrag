@@ -13,8 +13,8 @@ $('body').on({
     'custom/drag/drop/files': function(event, files) {
         console.log(files);
     },
-    'custom/drag/drop/tab': function(event, imageUrl) {
-        console.log(imageUrl);
+    'custom/drag/drop/tab': function(event, imageURL) {
+        console.log(imageURL);
     },
 
     // Enter events
