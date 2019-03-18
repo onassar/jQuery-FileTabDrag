@@ -389,15 +389,15 @@
      * @return  void
      */
     var __processFileDrop = function(event, $element) {
-        var eventType = 'custom/drag/drop/files';
+        var eventName = 'custom/drag/drop/files';
         if (__containsDirectories(event) === true) {
             var callback = function(files) {
-                $element.triggerHandler(eventType, [files, true]);
+                $element.triggerHandler(eventName, [files, true]);
             }
             __convertDataTransferItemsToFiles(event, callback);
         } else {
             var files = event.originalEvent.dataTransfer.files;
-            $element.triggerHandler(eventType, [files]);
+            $element.triggerHandler(eventName, [files]);
         }
     };
 
@@ -410,8 +410,8 @@
      * @return  void
      */
     var __processFileEnter = function(event, $element) {
-        var eventType = 'custom/drag/enter/files';
-        $element.triggerHandler(eventType);
+        var eventName = 'custom/drag/enter/files';
+        $element.triggerHandler(eventName);
     };
 
     /**
@@ -425,8 +425,8 @@
     var __processTabDrop = function(event, $element) {
         var imageURI = __getTabTransferImageURI(event);
         if (imageURI !== false) {
-            var eventType = 'custom/drag/drop/tab';
-            $element.triggerHandler(eventType, [imageURI]);
+            var eventName = 'custom/drag/drop/tab';
+            $element.triggerHandler(eventName, [imageURI]);
         }
     };
 
@@ -439,8 +439,8 @@
      * @return  void
      */
     var __processTabEnter = function(event, $element) {
-        var eventType = 'custom/drag/enter/tab';
-        $element.triggerHandler(eventType);
+        var eventName = 'custom/drag/enter/tab';
+        $element.triggerHandler(eventName);
     };
 
     /**
@@ -455,28 +455,28 @@
             'dragenter': function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                var eventType = 'custom/drag/enter';
-                $element.triggerHandler(eventType);
+                var eventName = 'custom/drag/enter';
+                $element.triggerHandler(eventName);
                 __processEnter(event, $element);
             },
             'dragleave': function(event) {
-                var eventType = 'custom/drag/leave';
-                $element.triggerHandler(eventType);
+                var eventName = 'custom/drag/leave';
+                $element.triggerHandler(eventName);
             },
             'dragover': function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                var eventType = 'custom/drag/over';
-                $element.triggerHandler(eventType);
+                var eventName = 'custom/drag/over';
+                $element.triggerHandler(eventName);
             },
             'drop': function(event) {
                 event.preventDefault();
                 event.stopPropagation();
-                var eventType = 'custom/drag/drop';
-                $element.triggerHandler(eventType);
+                var eventName = 'custom/drag/drop';
+                $element.triggerHandler(eventName);
                 __processDrop(event, $element);
-                eventType = 'custom/drag/leave';
-                $element.triggerHandler(eventType);
+                eventName = 'custom/drag/leave';
+                $element.triggerHandler(eventName);
             }
         });
     };
