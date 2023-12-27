@@ -2,8 +2,8 @@
 /**
  * jQuery File and Tag Drag
  * 
- * @author  Oliver Nassar <oliver@getstencil.com>
- * @link    https://github.com/getstencil/jQuery-FileTabDrag
+ * @author  Oliver Nassar <onassar@gmail.com>
+ * @link    https://github.com/onassar/jQuery-FileTabDrag
  * @example
  *          $('body').on({
  *              'custom/drag/drop/files': function(event, files) {
@@ -255,8 +255,7 @@
     /**
      * __isFileDrag
      * 
-     * @see     https://sentry.io/stencil/javascript/issues/573179290/?environment=prod
-     *          https://i.imgur.com/JnYywfe.png
+     * @see     https://i.imgur.com/JnYywfe.png
      * @access  private
      * @param   jQuery event
      * @return  Boolean
